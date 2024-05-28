@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+
+<ng-container *ngIf="isStudentlistActive">
+<app-list-student (isStudentDetail)="addItem($event)"></app-list-student>
+</ng-container>
+<ng-container *ngIf="isStudentDetailActive">
+  <app-student-detail [studentpass]="studentp" (isStudentlist)="activateListStudent($event)">
+
+  </app-student-detail>
+
+</ng-container>
