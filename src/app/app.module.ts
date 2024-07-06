@@ -20,7 +20,9 @@ import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import { AutocompletePipe } from './autocomplete.pipe';
 import { StudentManageComponent } from './student-manage/student-manage.component';
 import { InscriptionComponent } from './inscription/inscription.component';
-
+import { ActivateAccountComponent } from './activate-account/activate-account.component';
+import {CodeInputModule} from 'angular-code-input';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -42,6 +44,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
     AutocompletePipe,
     StudentManageComponent,
     InscriptionComponent,
+    ActivateAccountComponent,
+    LoginComponent,
+
 
   ],
   imports: [
@@ -52,7 +57,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     ReactiveFormsModule,
     NgbModule,
     MatProgressSpinner,
-
+    CodeInputModule
 
 
   ],
