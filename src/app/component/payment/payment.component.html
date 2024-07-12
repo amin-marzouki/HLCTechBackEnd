@@ -1,0 +1,108 @@
+<app-navbar></app-navbar>
+
+<div class="search-hero">
+
+
+  <input class="form-control" type="text" name="search"  autocomplete="off"      placeholder=" search student by Email" #filter (input)="filterResults(filter.value)">
+  <i class="material-icons icon-pointer" >search</i>
+</div>
+  <div class="table-container">
+<table  class="table table-sticky">
+
+
+<thead>
+
+<th>Reciever</th>
+<th>Student</th>
+<th>Amount</th>
+<th>Payment date</th>
+<th>Note</th>
+<th>Formation</th>
+<th scope="col">
+<a><i class="material-icons align-middle" style="font-size: 24px; color:#f1c901" container="body" ngbTooltip="Add student" (click)="onAddStudentClick()">add_box</i></a>
+</th>
+</thead>
+
+
+
+  <tbody>
+  <ng-container *ngIf="adding()">
+
+
+
+    <td >
+
+      <input type="text"  class="form-control" [formControl]="recieverFormControl">
+      <div *ngIf="recieverFormControl.invalid && (recieverFormControl.dirty || recieverFormControl.touched)"
+           class="text-danger"><small>{{getErrorMessage(recieverFormControl)}}</small></div>
+    </td>
+    <td>
+
+      <input  type="text"   class="form-control" [formControl]="Student_nameFormControl">
+      <div *ngIf="Student_nameFormControl.invalid && (Student_nameFormControl.dirty || Student_nameFormControl.touched)"
+           class="text-danger"><small>{{getErrorMessage(Student_nameFormControl)}}</small></div>
+
+    </td>
+    <td>
+
+      <input  type="text"  class="form-control" [formControl]="AmountFormControl">
+      <div *ngIf="AmountFormControl.invalid && (AmountFormControl.dirty || AmountFormControl.touched)"
+           class="text-danger"><small>{{getErrorMessage(AmountFormControl)}}</small></div>
+
+    </td>
+
+    <td>
+      <input  type="date" class="form-control" [formControl]="DateFormControl">
+      <div *ngIf="DateFormControl.invalid && (DateFormControl.dirty || DateFormControl.touched)"
+           class="text-danger"><small>{{getErrorMessage(DateFormControl)}}</small></div>
+    </td>
+    <td>
+      <input  type="text" class="form-control" [formControl]="DetailFormControl">
+      <div *ngIf="DetailFormControl.invalid && (DetailFormControl.dirty || DetailFormControl.touched)"
+           class="text-danger"><small>{{getErrorMessage(DetailFormControl)}}</small></div>
+    </td>
+
+
+
+
+
+
+
+
+
+    <td>
+      <span [ngClass]="{'disabled': isAdding}">
+				<a ><i class="material-icons align-middle icon-pointer " style="margin: 0 5px;"  placement="bottom" container="body"  ngbTooltip="Save" (click)="onAddClick()" [ngClass]="{ 'disabled': isAddDisabled() }">done</i></a>
+
+          	<a><i class="material-icons align-middle icon-pointer" style="margin: 0 5px;" placement="bottom" container="body" ngbTooltip="Cancell"(click)="onCancelAddClick()">close</i></a>
+		    </span>
+
+    </td>
+
+  </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+      <ng-container *ngFor="let paymentElement of paymentFilter">
+        <tr>
+          <td>{{paymentElement.receiver}}</td>
+          <td>{{paymentElement.Student_name}}</td>
+          <td>{{paymentElement.Amount}}</td>
+          <td>{{paymentElement.Date}}</td>
+          <td>{{paymentElement.Detail}}</td>
+          <td>{{paymentElement.formation_name}}</td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+

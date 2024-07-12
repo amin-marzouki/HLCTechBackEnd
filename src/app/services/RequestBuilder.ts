@@ -349,6 +349,7 @@ export class RequestBuilder {
       httpHeaders = headerParam.append(httpHeaders);
     }
 
+
     // Request content headers
     if (this._bodyContentType && !(this._bodyContent instanceof FormData)) {
       httpHeaders = httpHeaders.set('Content-Type', this._bodyContentType);

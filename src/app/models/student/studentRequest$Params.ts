@@ -1,14 +1,14 @@
-import {Formation} from "../formation/formation.model";
-
-export class Student {
+export interface studentRequest$Params{
   studentId?:any;
-  name?:string;
+  name:string;
   famillyName?:string;
   Cin?:string;
-  phoneNumber?: Number | null=null;
+  phoneNumber?: Number;
   classe?:string;
   email?:string;
   adresse?:string;
   formation_id?:any;
+  Etat?:String;
+  Gender?:String;
 
 }

@@ -3,8 +3,8 @@ import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import {RequestBuilder} from "../../RequestBuilder";
 import {StrictHttpResponse} from "../../StrictHttpResponse";
-import {AuthenticationResponse} from "../../models/AuthenticationResponse";
-import {AuthenticationRequest} from "../../models/AuthenticateRequest";
+import {AuthenticationResponse} from "../../../models/auth/AuthenticationResponse";
+import {AuthenticationRequest} from "../../../models/auth/AuthenticateRequest";
 
 export interface Authenticate$Params {
   body: AuthenticationRequest
@@ -26,4 +26,4 @@ export function authenticate(http: HttpClient, rootUrl: string, params: Authenti
   );
 }
 
-authenticate.PATH = '/auth/authenticate';
+authenticate.PATH = '/authenticate';

@@ -1,0 +1,198 @@
+<app-navbar></app-navbar>
+<!-- Your other content goes here -->
+<div class="table-loading-shade" *ngIf="isProcessing">
+  <mat-spinner *ngIf="isProcessing"></mat-spinner>
+</div>
+<div class="search-hero">
+  <input class="form-control" type="text" name="search"  autocomplete="off"      placeholder=" search student by Email" #filter>
+  <i class="material-icons icon-pointer" (click)="filterResults(filter.value)">search</i>
+</div>
+<div class="table-container">
+  <table class="table table-sticky">
+    <thead>
+    <tr>
+      <th></th>
+      <th> ID</th>
+      <th>nom</th>
+      <th>Prénom</th>
+      <th>Adresse</th>
+      <th>Cin</th>
+      <th>Numéro de téléphone</th>
+      <th>Email</th>
+      <th scope="col">
+
+      <a><i class="material-icons align-middle" style="font-size: 24px; color:#f1c901" container="body" ngbTooltip="Add student" (click)="onAddStudentClick()">add_box</i></a>
+
+        <!-- <i class="material-icons" placement="bottom" container="body" ngbTooltip="Delete selected" (click)="onDeleteSelectedClick()">delete_sweep</i>-->
+
+
+      </th>
+    </tr>
+
+    </thead>
+
+    <tbody>
+    <!-- row of added student-->
+    <ng-container *ngIf="adding()">
+
+
+<span></span>
+      <td >
+
+        <input type="text"  class="form-control" [formControl]="studentIdFormControl">
+        <div *ngIf="studentIdFormControl.invalid && (studentIdFormControl.dirty || studentIdFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(studentIdFormControl)}}</small></div>
+      </td>
+          <td>
+
+            <input  type="text"   class="form-control" [formControl]="firstNameFormControl">
+            <div *ngIf="firstNameFormControl.invalid && (firstNameFormControl.dirty || firstNameFormControl.touched)"
+                 class="text-danger"><small>{{getErrorMessage(firstNameFormControl)}}</small></div>
+
+          </td>
+          <td>
+
+            <input  type="text"  class="form-control" [formControl]="famillyNameFormControl">
+            <div *ngIf="famillyNameFormControl.invalid && (famillyNameFormControl.dirty || famillyNameFormControl.touched)"
+                 class="text-danger"><small>{{getErrorMessage(famillyNameFormControl)}}</small></div>
+
+          </td>
+
+
+          <td>
+            <input  type="text" class="form-control" [formControl]="adresseFormControl">
+            <div *ngIf="adresseFormControl.invalid && (adresseFormControl.dirty || adresseFormControl.touched)"
+                 class="text-danger"><small>{{getErrorMessage(adresseFormControl)}}</small></div>
+          </td>
+
+
+          <td>
+            <input  type="text" class="form-control" [formControl]="cinFormControl">
+            <div *ngIf="cinFormControl.invalid && (cinFormControl.dirty || cinFormControl.touched)"
+                 class="text-danger"><small>{{getErrorMessage(cinFormControl)}}</small></div>
+          </td>
+
+      <td>
+        <input  type="text"  class="form-control" [formControl]="phoneNumberFormControl">
+        <div *ngIf="phoneNumberFormControl.invalid && (phoneNumberFormControl.dirty || phoneNumberFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(phoneNumberFormControl)}}</small></div>
+      </td>
+
+
+      <td>
+        <input  type="text"  class="form-control" [formControl]="emailFormControl">
+
+        <div *ngIf="emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(emailFormControl)}}</small></div>
+
+      </td>
+
+
+<td>
+      <span [ngClass]="{'disabled': isAdding}">
+				<a ><i class="material-icons align-middle icon-pointer " style="margin: 0 5px;"  placement="bottom" container="body"  ngbTooltip="Save" (click)="onAddClick()" [ngClass]="{ 'disabled': isAddDisabled() }">done</i></a>
+
+          	<a><i class="material-icons align-middle icon-pointer" style="margin: 0 5px;" placement="bottom" container="body" ngbTooltip="Cancell"(click)="onCancelAddClick()">close</i></a>
+		    </span>
+
+</td>
+
+    </ng-container>
+
+<!-- student list rows-->
+    <ng-container *ngFor="let student of filtredStudentList">
+      <tr class="masterRow" >
+        <td id="selectionColumn">
+          <div class="form-check">
+            <input class="form-check-input position-static" type="checkbox"
+                   value="" (click)="$event.stopPropagation()" (change)="$event ? studentToggle(student) : null"
+                   [checked]="selectedStudents.has(student)"></div>
+        </td>
+
+        <td scope="row" id="studentSchoolId">
+          <span *ngIf="!isEditingStudent(student.studentId)">{{student.studentId}}</span>
+          <span *ngIf="isEditingStudent(student.studentId)">
+				<input type="text" class="form-control" [formControl]="studentIdFormControl"/>
+
+				<div
+          *ngIf="studentIdFormControl.invalid && (studentIdFormControl.dirty || studentIdFormControl.touched)"
+          class="text-danger"><small>{{getErrorMessage(studentIdFormControl)}}</small>
+        </div>
+			</span>
+        </td>
+
+        <td scope="row">
+          <span *ngIf="!isEditingStudent(student.studentId)">{{student.name}}</span>
+          <span *ngIf="isEditingStudent(student.studentId)">
+				<input type="text" class="form-control" [formControl]="firstNameFormControl"/>
+				<div *ngIf="firstNameFormControl.invalid && (firstNameFormControl.dirty || firstNameFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(firstNameFormControl)}}</small></div>
+			</span>
+        </td>
+
+        <td scope="row">
+          <span *ngIf="!isEditingStudent(student.studentId)">{{student.famillyName}}</span>
+          <span *ngIf="isEditingStudent(student.studentId)">
+				<input type="text" class="form-control" [formControl]="famillyNameFormControl"/>
+				<div *ngIf="famillyNameFormControl.invalid && (famillyNameFormControl.dirty || famillyNameFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(famillyNameFormControl)}}</small></div>
+			</span>
+        </td>
+        <td scope="row">
+          <span *ngIf="!isEditingStudent(student.studentId)">{{student.adresse}}</span>
+          <span *ngIf="isEditingStudent(student.studentId)">
+				<input type="text" class="form-control" [formControl]="adresseFormControl"/>
+				<div *ngIf="adresseFormControl.invalid && (adresseFormControl.dirty || adresseFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(adresseFormControl)}}</small></div>
+			</span>
+        </td>
+        <td scope="row">
+          <span *ngIf="!isEditingStudent(student.studentId)">{{student.Cin}}</span>
+          <span *ngIf="isEditingStudent(student.studentId)">
+				<input type="text" class="form-control" [formControl]="cinFormControl"/>
+				<div *ngIf="cinFormControl.invalid && (cinFormControl.dirty || cinFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(cinFormControl)}}</small></div>
+			</span>
+        </td>
+
+        <td scope="row">
+          <span *ngIf="!isEditingStudent(student.studentId)">{{student.phoneNumber}}</span>
+          <span *ngIf="isEditingStudent(student.studentId)">
+				<input type="text" class="form-control" [formControl]="phoneNumberFormControl"/>
+				<div *ngIf="phoneNumberFormControl.invalid && (phoneNumberFormControl.dirty || phoneNumberFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(phoneNumberFormControl)}}</small></div>
+			</span>
+        </td>
+
+        <td scope="row">
+          <span *ngIf="!isEditingStudent(student.studentId)">{{student.email}}</span>
+          <span *ngIf="isEditingStudent(student.studentId)">
+				<input type="text" class="form-control" [formControl]="emailFormControl"/>
+				<div *ngIf="phoneNumberFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched)"
+             class="text-danger"><small>{{getErrorMessage(emailFormControl)}}</small></div>
+			</span>
+        </td>
+
+        <td mat-cell>
+		  	<span *ngIf="!isEditingStudent(student.studentId)">
+           <i class="material-icons align-middle icon-pointer" placement="bottom" container="body" ngbTooltip="detail" (click)="onDetailClick(student)"> more </i>
+				<i class="material-icons align-middle icon-pointer " placement="bottom" container="body" ngbTooltip="Edit student" (click)="onEditClick(student.studentId)">edit</i>
+<i class="material-icons align-middle icon-pointer " placement="bottom" container="body" ngbTooltip="Edit student" (click)="onPayClick(student.studentId)">edit</i>
+          	<i class="material-icons align-middle icon-pointer" placement="bottom" container="body" ngbTooltip="Delete student" (click)="onDeleteClick(student.studentId)">delete</i>
+		    </span>
+          <span *ngIf="isEditingStudent(student.studentId)">
+				<i *ngIf="isUpdateDisabled()" class="material-icons" placement="bottom" container="body" ngbTooltip="Save" style="color:gray">done</i>
+            	<i *ngIf="!isUpdateDisabled()" class="material-icons icon-pointer" placement="bottom" container="body" ngbTooltip="Save" (click)="onUpdateClick()">done</i>
+            	<i class="material-icons icon-pointer" placement="bottom" container="body" ngbTooltip="Cancel" (click)="onCancelEditClick()">close</i>
+		    </span>
+        </td>
+
+     </tr>
+    </ng-container>
+
+
+    </tbody>
+  </table>
+
+</div>
+

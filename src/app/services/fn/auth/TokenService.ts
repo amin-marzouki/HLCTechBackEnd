@@ -24,6 +24,7 @@ export class TokenService {
     // check expiry date
     const isTokenExpired = jwtHelper.isTokenExpired(token);
     if (isTokenExpired) {
+      console.log(isTokenExpired)
       localStorage.clear();
       return false;
     }
