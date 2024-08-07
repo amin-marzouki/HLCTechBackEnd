@@ -23,8 +23,9 @@ export class TokenService {
     const jwtHelper = new JwtHelperService();
     // check expiry date
     const isTokenExpired = jwtHelper.isTokenExpired(token);
+
     if (isTokenExpired) {
-      console.log(isTokenExpired)
+      console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm")
       localStorage.clear();
       return false;
     }
@@ -40,7 +41,6 @@ export class TokenService {
     if (token) {
       const jwtHelper = new JwtHelperService();
       const decodedToken = jwtHelper.decodeToken(token);
-      console.log(decodedToken.authorities);
       return decodedToken.authorities;
     }
     return [];

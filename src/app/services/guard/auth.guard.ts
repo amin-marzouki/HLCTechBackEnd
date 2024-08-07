@@ -12,3 +12,14 @@ export const authGuard: CanActivateFn = () => {
   }
   return true;
 };
+ export const authManager:CanActivateFn = ()=>{
+  const tokenService = inject(TokenService);
+  const router = inject(Router);
+  var roles=tokenService.userRoles;
+  console.log("hello"+roles)
+  if (tokenService.isTokenNotValid() || !(roles.includes("Manager"))) {
+    router.navigate(['login']);
+    return false
+  }
+  return true;
+}

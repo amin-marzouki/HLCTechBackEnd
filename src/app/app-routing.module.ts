@@ -8,16 +8,18 @@ import {InscriptionComponent} from "./component/inscription/inscription.componen
 import {RegisterComponent} from "./authcomponent/register/register.component";
 import {ActivateAccountComponent} from "./component/activate-account/activate-account.component";
 import {LoginComponent} from "./authcomponent/login/login.component";
-import {authGuard} from "./services/guard/auth.guard";
+import {authGuard, authManager} from "./services/guard/auth.guard";
 import {PaymentComponent} from "./component/payment/payment.component";
+import {CourseDetailComponent} from "./component/course-detail/course-detail.component";
+import {FormationStatsComponent} from "./component/formation-stats/formation-stats.component";
 
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'Formation', pathMatch: 'full' },
-  { path: 'Student', component: StudentManageComponent ,canActivate: [authGuard]},
+  { path: 'Student', component: StudentManageComponent ,canActivate: [authManager]},
   { path: 'Formation', component: ListFormationComponent  },
-  { path: 'navbar', component: NavbarComponent ,canActivate: [authGuard] },
+  { path: 'navbar', component: NavbarComponent ,canActivate: [authManager] },
   {path: 'inscription/:formationName/:formationId',component:InscriptionComponent },
   {path:'register',component:RegisterComponent} ,
   {path:'user-dashboard',component: ListFormationComponent ,canActivate: [authGuard]},
@@ -26,8 +28,10 @@ const routes: Routes = [
     component: ActivateAccountComponent
   },
   {path:'login',component:LoginComponent},
-  {path:'payment',component:PaymentComponent},
-  {path:'listStudent',component:ListStudentComponent}
+  {path:'payment/:student_id',component:PaymentComponent},
+  {path:'listStudent',component:ListStudentComponent},
+  {path:'coursDetail/:formationName/:formationId',component:CourseDetailComponent},
+  {path:'formationsStat',component:FormationStatsComponent}
 
 ];
 

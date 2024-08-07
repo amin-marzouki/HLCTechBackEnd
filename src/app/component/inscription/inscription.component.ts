@@ -39,7 +39,7 @@ export class InscriptionComponent implements OnInit{
   studentIdFormControl = new FormControl('',[Validators.required]);
   famillyNameFormControl = new FormControl('',[Validators.required]);
   cinFormControl = new FormControl('',[Validators.required]);
-  phoneNumberFormControl = new FormControl(0,[Validators.required]);
+  phoneNumberFormControl = new FormControl(null,[Validators.required]);
   emailFormControl = new FormControl('',[Validators.required]);
   adresseFormControl=new FormControl('',[Validators.required]);
   onInscriptionSubmit(){

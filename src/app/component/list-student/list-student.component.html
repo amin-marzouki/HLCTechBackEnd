@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 <!-- Your other content goes here -->
 <div class="table-loading-shade" *ngIf="isProcessing">
   <mat-spinner *ngIf="isProcessing"></mat-spinner>
@@ -175,9 +175,10 @@
 
         <td mat-cell>
 		  	<span *ngIf="!isEditingStudent(student.studentId)">
+          <i class="material-icons align-middle icon-pointer " placement="bottom" container="body" ngbTooltip="Edit student" (click)="onPayClick(student.studentId)">payment</i>
            <i class="material-icons align-middle icon-pointer" placement="bottom" container="body" ngbTooltip="detail" (click)="onDetailClick(student)"> more </i>
 				<i class="material-icons align-middle icon-pointer " placement="bottom" container="body" ngbTooltip="Edit student" (click)="onEditClick(student.studentId)">edit</i>
-<i class="material-icons align-middle icon-pointer " placement="bottom" container="body" ngbTooltip="Edit student" (click)="onPayClick(student.studentId)">edit</i>
+
           	<i class="material-icons align-middle icon-pointer" placement="bottom" container="body" ngbTooltip="Delete student" (click)="onDeleteClick(student.studentId)">delete</i>
 		    </span>
           <span *ngIf="isEditingStudent(student.studentId)">

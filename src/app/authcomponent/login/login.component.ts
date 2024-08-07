@@ -21,6 +21,7 @@ export class LoginComponent {
   }
 
   login() {
+    console.log("eeeeeeùmmmmù"+this.authRequest.email+this.authRequest.password)
     this.errorMsg = [];
     this.authService.authenticate({
       body: this.authRequest

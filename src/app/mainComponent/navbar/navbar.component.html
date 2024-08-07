@@ -20,13 +20,17 @@
           <a class="nav-link" routerLink="/Formation">Formation</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Student">StudentList</a>
+          <a *ngIf="isManager" class="nav-link" routerLink="/Student"
+             >StudentList</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#team">Team</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/login">Log in</a>
         </li>
       </ul>
     </div>

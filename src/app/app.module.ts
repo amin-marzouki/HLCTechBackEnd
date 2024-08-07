@@ -26,6 +26,12 @@ import { LoginComponent } from './authcomponent/login/login.component';
 import {RedirectService} from "./services/redirection";
 import {PaymentComponent} from "./component/payment/payment.component";
 import {StudentDetailComponent} from "./component/student-detail/student-detail.component";
+import { CourseDetailComponent } from './component/course-detail/course-detail.component';
+import { NewLineToBreakPipe } from './pip/new-line-to-break.pipe';
+import { FooterComponent } from './mainComponent/footer/footer/footer.component';
+import {MatNestedTreeNode, MatTree} from "@angular/material/tree";
+import {FormationStatsComponent} from "./component/formation-stats/formation-stats.component";
+
 
 
 
@@ -50,7 +56,11 @@ import {StudentDetailComponent} from "./component/student-detail/student-detail.
     InscriptionComponent,
     ActivateAccountComponent,
     LoginComponent,
-    PaymentComponent
+    PaymentComponent,
+    CourseDetailComponent,
+    NewLineToBreakPipe,
+    FooterComponent,
+    FormationStatsComponent
 
 
   ],
@@ -62,7 +72,9 @@ import {StudentDetailComponent} from "./component/student-detail/student-detail.
     ReactiveFormsModule,
     NgbModule,
     MatProgressSpinner,
-    CodeInputModule
+    CodeInputModule,
+    MatTree,
+    MatNestedTreeNode
 
 
   ],

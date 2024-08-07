@@ -1,0 +1,41 @@
+h3 {
+  line-height: 1.66;
+  margin: 0;
+  padding: 25px 0 0 0;
+  font-weight: 700;
+  color: #222;
+  font-family: montserrat;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 32px
+}
+label {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: montserrat;
+  margin-bottom: 2px;
+  display: block
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  border: 1px solid #ebebeb;
+  padding: 11px 20px;
+  box-sizing: border-box;
+  font-family: montserrat;
+  font-weight: 500;
+  font-size: 13px
+}
+section {
+  padding: 50px 5px;
+}
+.form-row .form-group {
+  width: 50%;
+  padding: 0 15px
+}
+
+.form-group {
+  margin-bottom: 23px;
+  position: relative
+}

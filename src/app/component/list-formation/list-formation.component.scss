@@ -4,7 +4,7 @@ body {
   background: #f1fbff;
 }
 .section-padding {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 .carousel-item {
   height: 100vh;
@@ -36,8 +36,20 @@ body {
   background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
-
-
+.lead{
+  line-height: 1.8;
+}
+.intro-p ,.service-p,.formation-p{
+  font-family: Arial, sans-serif; /* Sets a standard font */
+  font-size: 16px; /* Sets a readable font size */
+  line-height: 1.6; /* Improves readability with appropriate line spacing */
+  margin: 0 0 1.5em 0; /* Adds space between paragraphs */
+  color: #333; /* Sets a standard text color */
+  text-align: justify;
+}
+.service-p,.formation-p{
+  text-align: center;
+}
 .portfolio .card {
   box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
 }

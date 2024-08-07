@@ -51,7 +51,10 @@
         <div class="about-text">
           <h2>We Provide the Best Quality<br>
             Services Ever</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore reiciendis. Assumenda eos quod animi! Soluta nesciunt inventore dolores excepturi provident, culpa beatae tempora, explicabo corporis quibusdam corrupti. Autem, quaerat. Assumenda quo aliquam vel, nostrum explicabo ipsum dolor, ipsa perferendis porro doloribus obcaecati placeat natus iste odio est non earum?</p><a class="btn btn-warning" href="#">Learn More</a>
+          <p class="intro-p">Pour offrir une formation de la plus haute qualité à nos participants, en leur fournissant
+            les compétences et les connaissances nécessaires pour réussir sur le marché et gravir les échelons du succès.
+            Nous nous engageons à leur fournir des opportunités précieuses pour
+            s'engager sur le marché, leur permettant d'exceller et d'atteindre leurs objectifs professionnels.</p><a class="btn btn-warning" href="#">Learn More</a>
         </div>
       </div>
     </div>
@@ -63,7 +66,7 @@
       <div class="col-md-12">
         <div class="section-header text-center pb-5">
           <h2>Nos Services</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur<br>
+          <p class="service-p">Lorem ipsum dolor sit amet, consectetur<br>
             adipisicing elit. Non, quo.</p>
         </div>
       </div>
@@ -72,27 +75,31 @@
       <div class="col-12 col-md-12 col-lg-4">
         <div class="card text-white text-center bg-dark pb-2">
           <div class="card-body">
-            <i class="material-icons" container="body">grade</i>
-            <h3 class="card-title">Best Quality</h3>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Read More</button>
+            <i class="material-icons" container="body">engineering</i>
+            <h3 class="card-title">Formation CAO/FAO
+            </h3>
+            <p class="lead">We offer training in multiple software applications.
+            </p><button class="btn bg-warning text-dark">Read More</button>
           </div>
         </div>
       </div>
       <div class="col-12 col-md-12 col-lg-4">
         <div class="card text-white text-center bg-dark pb-2">
           <div class="card-body">
-            <i class="material-icons" container="body">settings</i>
-            <h3 class="card-title">Best Quality</h3>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Read More</button>
+            <i class="material-icons" container="body">view_in_ar</i>
+            <h3 class="card-title">Impression 3D
+            </h3>
+            <p class="lead">We offer training and production services using 3D printers in collaboration with our partner.</p><button class="btn bg-warning text-dark">Read More</button>
           </div>
         </div>
       </div>
       <div class="col-12 col-md-12 col-lg-4">
         <div class="card text-white text-center bg-dark pb-2">
           <div class="card-body">
-            <i class="material-icons" container="body">computer</i>
-            <h3 class="card-title">Best Quality</h3>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Read More</button>
+            <i class="material-icons" container="body">3d_rotation</i>
+            <h3 class="card-title">Application interactive</h3>
+            <p class="lead">We provide interactive 3D and VR experiences.
+            </p><button class="btn bg-warning text-dark">Read More</button>
           </div>
         </div>
       </div>
@@ -105,7 +112,7 @@
   <div class="col-md-12">
     <div class="section-header text-center pb-5">
       <h2>Nos Formations</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur<br>
+      <p class="formation-p">Lorem ipsum dolor sit amet, consectetur<br>
         adipisicing elit. Non, quo.</p>
     </div>
   </div>
@@ -119,11 +126,11 @@
 
         <div class="img-area mb-4"><img alt="" class="img-fluid" [src]="formation.imgsrc"></div>
         <h3 class="card-title">{{formation.nom_formation}}</h3>
-        <p class="lead">{{formation.detail}}</p>
+        <div *ngIf="formation.detail "> <p class="lead" [innerHTML]="formation.detail | newLineToBreak"></p></div>
 
           <button class="btn bg-warning text-dark mr-2" (click)="inscription(formation.nom_formation,formation.id)">Inscrire</button>
 
-          <button class="btn bg-warning text-dark ">Learn More</button>
+          <button class="btn bg-warning text-dark "(click)="learnMore(formation.nom_formation,formation.id)">Learn More</button>
 
 
 
@@ -135,29 +142,9 @@
 </div>
 </div>
 </section>
-<!-- Contact starts -->
-<section class="contact section-padding" id="contact">
-  <div class="container mt-5 mb-5">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-header text-center pb-5">
-          <h2>Contact Us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur<br>
-            adipisicing elit. Non, quo.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row m-0">
-      <div class="col-md-12 p-0 pt-4 pb-4">
-        <!--for getting the form download the code from download button-->
-      </div>
-    </div>
-  </div>
-</section><!-- contact ends -->
+
 <!-- footer starts -->
-<footer class="bg-dark p-2 text-center">
-  <div class="container">
-    <p class="text-white">All Right Reserved By HLCTech</p>
-  </div>
-</footer>
+<section class="about section-padding">
+<app-footer></app-footer>
+</section>
 <!-- footer ends -->

@@ -11,6 +11,7 @@ import {FormControl, Validators} from "@angular/forms";
 import {Payment} from "../../models/studentPayment/payment.model";
 import {PaymentRequest$Params} from "../../models/studentPayment/paymentRequest$Params";
 import {addStudentPayment} from "../../services/fn/student/addStudentPayment";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -18,14 +19,21 @@ import {addStudentPayment} from "../../services/fn/student/addStudentPayment";
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.scss'
 })
-export class PaymentComponent implements AfterViewInit{
-constructor(private paymentServ:PaymentService){}
+export class PaymentComponent implements AfterViewInit,OnInit{
+constructor(private paymentServ:PaymentService,private route: ActivatedRoute,){}
   ngAfterViewInit(): void {
     // Initialization logic here
     this.paymentList();
+
+  }
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.student_id = Number(params.get('student_id'));
+
+    });
   }
   isProcessing=true;
-
+  student_id:number| null = null;
   paymentResponse:PaymentResponse[]=[];
   paymentFilter:PaymentResponse[]=[];
 
@@ -83,7 +91,7 @@ isAdding=false;
   }
 
   paymentList(){
-  this.paymentServ.findStudentPamyents({student_id:2}).subscribe({
+  this.paymentServ.findStudentPamyents({student_id:this.student_id??0}).subscribe({
     next: (pay) => {
       console.log(pay)
       this.paymentFilter=pay;
@@ -101,7 +109,7 @@ isAdding=false;
   onAddClick(){
     this.isAdding=true
     const paymenrReq: PaymentRequest$Params = {
-      student_id: this.paymentResponse[0].student_id,
+      student_id: this.student_id??this.paymentResponse[0].student_id,
       description: `${this.DetailFormControl.value}`,
       amount: this.AmountFormControl.value?? 0,
       payment_date: this.DateFormControl.value? new Date(this.DateFormControl.value) : undefined,

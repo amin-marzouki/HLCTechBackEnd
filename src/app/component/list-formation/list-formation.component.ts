@@ -45,4 +45,7 @@ formation? :Formation[];
           error:(e)=>console.error(e)
         });
   }
+  learnMore(formationName: string | undefined,formation_id:number){
+    this.router.navigate(['coursDetail',formationName,formation_id])
+  }
 }

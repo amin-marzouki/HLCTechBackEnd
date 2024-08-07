@@ -1,26 +1,56 @@
-<div class="container-fluid card login-container">
-  <h3 class="text-center">Login</h3>
-  <hr>
+<app-navbar></app-navbar>
+
+
+<div class="grid align__item">
+
+  <div class="register">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+         width="56" height="84" viewBox="0 0 751.000000 751.000000"
+         preserveAspectRatio="xMidYMid meet">
+
+      <g transform="translate(0.000000,751.000000) scale(0.100000,-0.100000)"
+         fill="#000000" stroke="none">
+        <path d="M3523 5382 c-100 -59 -184 -110 -188 -114 -4 -4 43 -68 104 -142
+l111 -134 0 -521 0 -521 340 0 340 0 0 205 0 204 -30 16 c-46 24 -63 58 -57
+112 9 80 83 121 160 90 87 -37 87 -174 0 -208 -23 -8 -23 -10 -23 -214 l0
+-205 1010 0 1010 0 0 -620 0 -620 -24 -10 c-31 -11 -46 -39 -46 -84 0 -51 28
+-76 84 -76 55 0 85 23 93 73 5 33 2 41 -31 71 l-36 35 0 618 0 618 -613 359
+c-1354 794 -1777 1042 -1887 1108 -63 37 -119 68 -125 68 -5 -1 -92 -49 -192
+-108z"/>
+        <path d="M3230 5211 c-25 -16 -121 -73 -215 -128 -366 -215 -520 -306 -524
+-309 -1 -1 76 -87 172 -191 l176 -188 1 -222 0 -223 330 0 330 0 0 516 0 515
+-107 127 c-58 70 -109 128 -112 129 -3 1 -26 -11 -51 -26z"/>
+        <path d="M2365 4701 c-44 -26 -339 -200 -655 -385 -316 -186 -582 -344 -590
+-352 -12 -12 104 -14 828 -14 l842 0 0 213 0 214 -156 169 c-86 93 -163 177
+-172 186 -16 16 -22 14 -97 -31z"/>
+        <path d="M4207 4522 c-21 -23 -22 -76 -1 -96 21 -22 77 -20 97 2 25 27 22 78
+-5 96 -30 21 -71 20 -91 -2z"/>
+      </g>
+    </svg>
+
+    <h2>Log in</h2>
+
+
   <div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
     <p *ngFor="let msg of errorMsg">{{msg}}</p>
   </div>
-  <div class="mb-3">
-    <label for="login" class="form-label">Email address</label>
-    <input [(ngModel)]="authRequest.email"  type="email" class="form-control" id="login" placeholder="name@example.com">
+  <div class="form__field">
+    <input type="email" placeholder="info@mailaddress.com" id="login" [(ngModel)]="authRequest.email">
   </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input [(ngModel)]="authRequest.password" type="password" class="form-control" id="password" placeholder="Password">
+
+  <div class="form__field">
+    <input type="password" placeholder="••••••••••••"  id="password" [(ngModel)]="authRequest.password" >
   </div>
-  <div class="d-flex justify-content-between mb-3">
-    <button (click)="login()" type="button" class="btn btn-primary">
-      <em class="fas fa-sign-in-alt">&nbsp;Sign in</em>
-    </button>
-    <div>
-      Don't have an account?&nbsp;
-      <button (click)="register()" type="button" class="btn btn-link">
-        Register
-      </button>
-    </div>
+
+  <div class="form__field">
+    <input type="button" value="Log in" (click)="login()">
   </div>
+
+
+<p> Don't have an account?&nbsp;<a  (click)="register()">Register</a></p>
+
 </div>
+
+</div>
+
+

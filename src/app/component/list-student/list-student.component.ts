@@ -10,6 +10,8 @@ import { NotificationComponent } from '../../dialogs/notification/notification.c
 import { SelectionModel } from '@angular/cdk/collections';
 import { Output, EventEmitter } from '@angular/core';
 import {PaymentService} from "../../services/payment/payment.service";
+import {Router} from "@angular/router";
+import {TokenService} from "../../services/fn/auth/TokenService";
 
 @Component({
   selector: 'app-list-student',
@@ -17,14 +19,19 @@ import {PaymentService} from "../../services/payment/payment.service";
   styleUrl: './list-student.component.scss',
 
 })
-export class ListStudentComponent implements AfterViewInit {
+export class ListStudentComponent implements AfterViewInit,OnInit {
   /**
    * The constructor for the student list component.
    *
    * @param modalService a dependency injection (DI) for NgbModal
    */
-  constructor (private studentService :StudentService,private payServ:PaymentService,private modalService: NgbModal){
+  constructor (private studentService :StudentService,private payServ:PaymentService,private modalService: NgbModal,private router: Router,private  tokenServ:TokenService){
 
+  }
+
+  isManager=false;
+  ngOnInit(){
+    this.isManager=this.tokenServ.userRoles.includes('Manager');
   }
   ngAfterViewInit(){
     this.isProcessing=true;
@@ -197,14 +204,8 @@ export class ListStudentComponent implements AfterViewInit {
    *
    */
 onPayClick(payCore:any){
-    this.payServ.create(payCore)
-      .subscribe({
-        next: (res) => {
-          console.log(res);
+   this.router.navigate(['payment',payCore])
 
-        },
-        error: (e) => console.error(e)
-      });
 
     }
   /**
