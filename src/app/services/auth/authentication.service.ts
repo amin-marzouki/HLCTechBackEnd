@@ -1,8 +1,8 @@
-import {ApiConfiguration} from "../ApiConfiguration";
+import {ApiConfiguration} from "../http/ApiConfiguration";
 import {register, Register$Params} from "../fn/auth/register";
 import {HttpClient, HttpContext} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {StrictHttpResponse} from "../StrictHttpResponse";
+import {StrictHttpResponse} from "../http/StrictHttpResponse";
 import {map} from "rxjs/operators";
 import {authenticate, Authenticate$Params} from "../fn/auth/authenticate";
 import {AuthenticationResponse} from "../../models/auth/AuthenticationResponse";

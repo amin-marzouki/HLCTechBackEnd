@@ -1,11 +1,13 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Student} from "../../models/student/student.model";
-import {StudentService} from "../../services/student.service";
+import {StudentService} from "../../services/student/student.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Payment} from "../../models/studentPayment/payment.model";
 
 import {FormControl, Validators} from "@angular/forms";
 import {PaymentService} from "../../services/payment/payment.service";
+import {studentFormationPayments$params} from "../../models/studentFormationPayments/studentFormationPayments";
+import {studentFormationPayments$request} from "../../services/fn/student/findStudentFormationAndPamyents";
 
 @Component({
   selector: 'app-student-detail',
@@ -13,16 +15,42 @@ import {PaymentService} from "../../services/payment/payment.service";
   styleUrl: './student-detail.component.scss'
 })
 export class StudentDetailComponent implements OnInit{
-  constructor (private paymentService :PaymentService){
+  constructor (private paymentService :PaymentService,private StudentServ:StudentService){
 
   }
-
-  @Input() studentpass? :Student;
+ formationPaymentList?:studentFormationPayments$params[];
+  @Input() studentpass?:Student;
   @Output() isStudentlist= new EventEmitter<any>();
+  student?:Student;
 
   ngOnInit(): void {
-   // this.loadData(this.studentpass?.studentId);
+    //this.loadData(this.studentpass?.studentId);*
+    this.retrieveStudentPayment(this.studentpass?.studentId);
+    this.retrieveStudentById(this.studentpass?.studentId)
 
+  }
+  expandedIndex: number | null = null;
+
+  togglePayments(index: number) {
+    this.expandedIndex = this.expandedIndex === index ? null : index;
+  }
+  retrieveStudentPayment( student_id:number){
+
+this.StudentServ.findStudentFormationAndPamyents({'student_id':student_id}).subscribe({
+    next:(detail)=>
+    {
+      console.log(detail);
+      this.formationPaymentList=detail;
+    }
+  })}
+  retrieveStudentById(student_id:number){
+    this.StudentServ.findStudentById({'student_id':student_id}).subscribe(
+      {
+        next:(detail)=>{
+          this.student=detail;
+        }
+      }
+    )
   }
 /*
 paymentlist?:Payment[]=[];

@@ -1,8 +1,8 @@
 import {HttpClient, HttpContext, HttpResponse} from "@angular/common/http";
 import {CourseRequestParams} from "../../../models/formation/courseRequest$Params";
-import {RequestBuilder} from "../../RequestBuilder";
+import {RequestBuilder} from "../../http/RequestBuilder";
 import {filter, map} from "rxjs/operators";
-import {StrictHttpResponse} from "../../StrictHttpResponse";
+import {StrictHttpResponse} from "../../http/StrictHttpResponse";
 
 import {courseSkills$Response} from "../../../models/formation/courseSkills$Response";
 

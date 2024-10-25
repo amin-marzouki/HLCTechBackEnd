@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, EventEmitter, Output, output} from '@angular/core';
-import {StudentService} from "../../services/student.service";
+import {StudentService} from "../../services/student/student.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Formation} from "../../models/formation/formation.model";
 import {FormationService} from "../../services/formation/formation.service";

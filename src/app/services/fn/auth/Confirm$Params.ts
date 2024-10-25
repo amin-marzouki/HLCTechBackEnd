@@ -1,8 +1,8 @@
 import { HttpClient, HttpContext, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import {RequestBuilder} from "../../RequestBuilder";
-import {StrictHttpResponse} from "../../StrictHttpResponse";
+import {RequestBuilder} from "../../http/RequestBuilder";
+import {StrictHttpResponse} from "../../http/StrictHttpResponse";
 
 export interface Confirm$Params {
   token: string;

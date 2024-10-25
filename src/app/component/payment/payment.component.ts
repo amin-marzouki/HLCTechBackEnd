@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {StudentService} from "../../services/student.service";
+import {StudentService} from "../../services/student/student.service";
 import {PaymentService} from "../../services/payment/payment.service";
 import {HttpClient} from "@angular/common/http";
-import {StrictHttpResponse} from "../../services/StrictHttpResponse";
+import {StrictHttpResponse} from "../../services/http/StrictHttpResponse";
 import {Observable} from "rxjs";
 import {findStudentPaymentList} from "../../services/fn/student/find-Student-Payment-List";
 import {PaymentResponse} from "../../models/studentPayment/paymentResponse";

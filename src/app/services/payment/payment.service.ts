@@ -3,12 +3,12 @@ import {Observable} from "rxjs";
 
 import {HttpClient, HttpContext} from "@angular/common/http";
 
-import {StrictHttpResponse} from "../StrictHttpResponse";
+import {StrictHttpResponse} from "../http/StrictHttpResponse";
 import {findStudentPaymentList, FindStudentPaymentList$Params} from "../fn/student/find-Student-Payment-List";
 import {PaymentResponse} from "../../models/studentPayment/paymentResponse";
 import {map} from "rxjs/operators";
 import {BaseService} from "../auth/base.service";
-import {ApiConfiguration} from "../ApiConfiguration";
+import {ApiConfiguration} from "../http/ApiConfiguration";
 import {addStudentPayment, addStudentPayment$Params} from "../fn/student/addStudentPayment";
 
 const baseUrl = 'http://localhost:8080/api/payment';

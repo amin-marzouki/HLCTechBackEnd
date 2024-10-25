@@ -23,10 +23,10 @@ courseDetailsList:courseDetail$Response[]=[];
       this.formationName = params.get('formationName');
       this.formation_id=Number(params.get('formationId'));
       console.log(this.formation_id)
-     this.retriveCourseDetail();
-      this.retriveCourseSkills();
-    });
 
+    });
+    this.retriveCourseDetail();
+    this.retriveCourseSkills();
   }
   retriveCourseDetail(){
     return this.formationServ.retrieveCourseDetail({formation_id:this.formation_id??1}).subscribe(

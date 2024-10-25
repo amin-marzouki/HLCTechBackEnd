@@ -1,8 +1,8 @@
-import {StrictHttpResponse} from "../../StrictHttpResponse";
+import {StrictHttpResponse} from "../../http/StrictHttpResponse";
 import {HttpClient, HttpContext, HttpResponse} from "@angular/common/http";
 import {RegistrationRequest} from "../../../models/registration/RegistrationRequest";
 import {filter, map, Observable} from "rxjs";
-import {RequestBuilder} from "../../RequestBuilder";
+import {RequestBuilder} from "../../http/RequestBuilder";
 
 export interface Register$Params {
   body: RegistrationRequest

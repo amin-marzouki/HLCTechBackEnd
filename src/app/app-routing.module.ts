@@ -12,6 +12,8 @@ import {authGuard, authManager} from "./services/guard/auth.guard";
 import {PaymentComponent} from "./component/payment/payment.component";
 import {CourseDetailComponent} from "./component/course-detail/course-detail.component";
 import {FormationStatsComponent} from "./component/formation-stats/formation-stats.component";
+import {FormationActiveDetailComponent} from "./component/formation-active-detail/formation-active-detail.component";
+import {StudentDetailComponent} from "./component/student-detail/student-detail.component";
 
 
 
@@ -31,7 +33,9 @@ const routes: Routes = [
   {path:'payment/:student_id',component:PaymentComponent},
   {path:'listStudent',component:ListStudentComponent},
   {path:'coursDetail/:formationName/:formationId',component:CourseDetailComponent},
-  {path:'formationsStat',component:FormationStatsComponent}
+  {path:'formationsStat',component:FormationStatsComponent},
+  {path:'activeFormationDetail/:activeFormationId',component:FormationActiveDetailComponent},
+  {path:'studentProfile',component:StudentDetailComponent}
 
 ];
 

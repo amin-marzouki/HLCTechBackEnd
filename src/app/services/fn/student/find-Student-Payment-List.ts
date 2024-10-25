@@ -1,8 +1,8 @@
-import {StrictHttpResponse} from "../../StrictHttpResponse";
+import {StrictHttpResponse} from "../../http/StrictHttpResponse";
 import {HttpClient, HttpContext, HttpResponse} from "@angular/common/http";
 import {filter, map} from "rxjs/operators";
 
-import {RequestBuilder} from "../../RequestBuilder";
+import {RequestBuilder} from "../../http/RequestBuilder";
 import {PaymentResponse} from "../../../models/studentPayment/paymentResponse";
 
 export interface FindStudentPaymentList$Params {
@@ -13,7 +13,7 @@ export function findStudentPaymentList(http: HttpClient, rootUrl: string, params
   const rb = new RequestBuilder(rootUrl, findStudentPaymentList.PATH, 'get');
   if (params) {
     rb.path('student_id', params.student_id, {});
- ;
+
   }
 
   return http.request(

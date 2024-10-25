@@ -1,0 +1,446 @@
+
+<app-navbar></app-navbar>
+<div id="educo_wrapper">
+  <!--Single content start-->
+  <div class="ed_graysection ed_course_single ed_toppadder80 ed_bottompadder80">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-12 col-12">
+          <div class="ed_course_single_item">
+            <!--
+            <div class="ed_course_single_image">
+              <img src="{{foramtionDetail?.formationImg}}" alt="event image" />
+            </div>-->
+
+            <div class="ed_course_single_info">
+              <h2>{{foramtionDetail?.formationName}} <span>{{foramtionDetail?.totalIncome}}dt</span></h2>
+
+
+            <div class="ed_rating">
+                <div class="row w-100 justify-content-between">
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+
+                  <p class="fs-5">  Formateur : {{foramtionDetail?.formerName}}</p>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-6 pull-right text-right">
+                    <div class="ed_views">
+
+
+                      <p> Prix totale :{{foramtionDetail?.totalToPay}}dt</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ed_rating">
+                <div class="row w-100 justify-content-between">
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-6 pull-right text-right">
+                    <div class="ed_views">
+
+
+                      <p>   Nombre des etudiants :{{foramtionDetail?.numberOfStudent}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="ed_course_single_tab">
+              <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation"><a class="active" href="#description" aria-controls="description" role="tab" data-bs-toggle="tab">description</a></li>
+                  <!--
+                  <li role="presentation"><a href="#students" aria-controls="students" role="tab" data-bs-toggle="tab">students</a></li>
+                  <li role="presentation"><a href="#news" aria-controls="news" role="tab" data-bs-toggle="tab">news</a></li>
+                  <li role="presentation"><a href="#events" aria-controls="events" role="tab" data-bs-toggle="tab">events</a></li>-->
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="description">
+                    <div class="ed_course_tabconetent">
+                      <h2>about course</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent vehicula mauris ac facilisis congue. Fusce sem enim,
+                        rhoncus volutpat condimentum ac, placerat semper ligula. Suspendisse
+                        in viverra justo,
+                      </p>
+
+
+                    </div>
+                  </div>
+                  <!--
+                  <div role="tabpanel" class="tab-pane" id="students">
+                    <div class="ed_inner_dashboard_info">
+                      <div class="ed_course_single_info">
+                        <h2>total students :- <span>20</span></h2>
+                        <h5>10 students recently join this course</h5>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S01.jpg" alt="">
+                          <span>adler braxton</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S02.jpg" alt="">
+                          <span>baldwin dallas</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S03.jpg" alt="">
+                          <span>carney Tate</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S04.jpg" alt="">
+                          <span>dwight easton</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S05.jpg" alt="">
+                          <span>elbert wade</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S06.jpg" alt="">
+                          <span>hailey kyler</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S07.jpg" alt="">
+                          <span>graham ryder</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S08.jpg" alt="">
+                          <span>jaxon keegan</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S09.jpg" alt="">
+                          <span>kealy sage</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="ed_add_students">
+                          <img src="../assets/images/default/content/S10.jpg" alt="">
+                          <span>lavern gunner</span>
+                          <p>new student</p>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                          <div class="row">
+                            <div class="ed_blog_bottom_pagination ed_toppadder40">
+                              <nav>
+                                <ul class="pagination">
+                                  <li><a href="javascript:void(0);">1</a></li>
+                                  <li><a href="javascript:void(0);">2</a></li>
+                                  <li><a href="javascript:void(0);">3</a></li>
+                                  <li class="active"><a href="javascript:void(0);">Next <span class="sr-only">(current)</span></a></li>
+                                </ul>
+                              </nav>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  -->   <!--
+                <div role="tabpanel" class="tab-pane" id="news">
+                  <div class="ed_course_tabconetent">
+                    <h2>course news</h2>
+                    <h5>some recent news about this course....</h5>
+                    <p> I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer
+                      of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter
+                      consequences that are extremely painful. </p>
+                  </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="events">
+                  <div class="ed_course_single_info">
+                    <h2>total events on this course :-<span>5</span></h2>
+                    <div class="ed_course_single_inner_tab">
+                      <div role="tabpanel">
+
+                        <ul class="nav nav-tabs" role="tablist">
+                          <li role="presentation"><a class="active" href="#upcoming" aria-controls="upcoming" role="tab" data-bs-toggle="tab">upcoming</a></li>
+                          <li role="presentation"><a href="#past" aria-controls="past" role="tab" data-bs-toggle="tab">past</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div role="tabpanel" class="tab-pane active" id="upcoming">
+                            <div class="ed_course_event">
+                              <h5>1. mobile capabilities</h5>
+                              <p><span>orgnaiger :-</span> James Marco</p>
+                              <p><span>held on :-</span> October 1 & 7:30 Am - 9:00 Am</p>
+                              <p>It is pleasure, expound the actual teachings of the great explorer of the truthI will give you a complete account of the system, and No one rejects, dislikes, or avoids pleasure itself,
+                                because.
+                              </p>
+                            </div>
+                            <div class="ed_course_event">
+                              <h5>2. Management Prog.</h5>
+                              <p><span>orgnaiger :-</span> Fumes Sarcoma</p>
+                              <p><span>held on :-</span>October 3 & 10:30 Am - 2:00 Pm</p>
+                              <p>I will give you a complete account of the system, and No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, expound the actual teachings of the great explorer of
+                                the truth.</p>
+                            </div>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="past">
+                            <div class="ed_course_event">
+                              <h5>1. JavaScript Campus.</h5>
+                              <p><span>orgnaiger :-</span> Tina Fibonacci</p>
+                              <p><span>held on :-</span>September 20 & 7:30 Pm - 12:00 Am</p>
+                              <p>avoids pleasure itself, because it is pleasure, expound the actual teachings of the great explorer of the truth will give you a complete account of the system, and No one rejects, dislikes.</p>
+                            </div>
+                            <div class="ed_course_event">
+                              <h5>2. Coding Seminar</h5>
+                              <p><span>orgnaiger :-</span> James Marco</p>
+                              <p><span>held on :-</span> September 10 & 7:30 Am - 9:00 Am</p>
+                              <p>great explorer of the complete account of the system, and No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, expound the actual teachings of the truth.</p>
+                            </div>
+                            <div class="ed_course_event">
+                              <h5>3. Project Learning</h5>
+                              <p><span>orgnaiger :-</span> Shy Tommy</p>
+                              <p><span>held on :-</span>September 30 & 10:30 Am - 2:00 Pm</p>
+                              <p>one rejects, dislikes, or avoids pleasure itself, because it is pleasure, of the system, and No expound the actual teachings of the great explorer of the truth.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                -->
+                </div>
+              </div>
+            </div>
+            <!--tab End-->
+          </div>
+
+          <div class="ed_time_executor ed_toppadder40">
+            <div class="row">
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h4 class="card-title">Student List</h4>
+                    </div><!--end col-->
+                  </div>  <!--end row-->
+                </div><!--end card-header-->
+                <div class="card-body pt-0">
+                  <div class="search-hero">
+                    <input class="form-control" type="text" name="search"  autocomplete="off"      placeholder=" search student by Email" #filter>
+                    <i class="material-icons icon-pointer" (click)="filterResults(filter.value)">search</i>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table  mb-0 table-centered">
+                      <thead class="table-light">
+                      <tr>
+                        <th>Nom d'étudiant</th>
+                        <th>Email</th>
+
+
+                        <th>organization</th>
+                        <th>payed</th>
+                        <th>rest</th>
+                        <th>payment</th>
+
+                        <!-- <th class="text-end">Action</th>-->
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <ng-container *ngFor="let student of studentList; let i = index">
+                        <tr>
+                          <!--
+                          <td><img src="assets/images/logos/lang-logo/chatgpt.png" alt="" class="rounded-circle thumb-md me-1 d-inline">
+                            Micromin
+                          </td>-->
+                          <td>{{student.name}}</td>
+                          <td>{{student.email}}</td>
+
+
+                          <td *ngIf="student.industry">{{student.industry}}</td>
+                          <td *ngIf="student.univirsity">{{student.univirsity}}</td>
+                          <td>{{student.payed}}</td>
+                          <td>{{student.rest}}</td>
+                          <td>
+                            <i class="material-icons align-middle icon-pointer " placement="bottom" container="body" ngbTooltip="Payment List" (click)="togglePayments(i)">payment</i>
+
+                          </td>
+
+
+                          <!---    <td class="text-end">
+                                <div class="dropdown d-inline-block">
+                                  <a class="dropdown-toggle arrow-none" id="dLabel112" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="las la-ellipsis-v fs-20 text-muted"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dLabel112">
+                                    <a class="dropdown-item" href="#">Creat Project</a>
+                                    <a class="dropdown-item" href="#">Open Project</a>
+                                    <a class="dropdown-item" href="#">Tasks Details</a>
+                                  </div>
+                                </div>
+                              </td>-->
+                        </tr>
+                        <tr *ngIf="expandedIndex === i">
+
+                          <td colspan="4">
+
+                            <table class="table  mb-0 table-centered">
+                              <thead class="table-light">
+                              <tr>
+                                <th> Amount</th>
+                                <th>Reciever</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr *ngFor="let payment of student.payments">
+                                <td>{{ payment.Amount }}dt</td>
+                                <td>{{ payment.receiver }}</td>
+                                <td>{{ payment.Date }}</td>
+                                <td>{{ payment.Detail }}</td>
+                              </tr>
+                              </tbody>
+                            </table>
+
+                          </td>
+
+                        </tr>
+                      </ng-container>
+                      </tbody>
+                    </table><!--end /table-->
+                  </div><!--end /tableresponsive-->
+                </div><!--end card-body-->
+              </div><!--end card-->
+
+            </div><!-- table -->
+            <!--
+                      <ul>
+                        <li>Lessons</li>
+                        <ng-container *ngFor="let courseDetail of courseDetailsList">
+                          <li><a>{{courseDetail.numChapter}} {{courseDetail.chabterDetail}}</a> <span>{{courseDetail.numbereOfHours}}</span></li>
+
+                          <p *ngIf="courseDetail.chabterDetail " [innerHTML]="courseDetail.chabterDetail | newLineToBreak"></p>
+                        </ng-container>
+
+
+                      </ul>-->
+          </div><!-- tableStudent -->
+
+                  </div>
+        <!--Sidebar Start-->
+
+
+        <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+          <div class="sidebar_wrapper_upper">
+            <div class="sidebar_wrapper">
+              <!--
+              <aside class="widget widget_button">
+                <a class="ed_btn ed_green" (click)="inscription(formation?.nom_formation,formation?.id)" > INSECRIRE</a>
+              </aside>-->
+              <aside class="widget widget_categories">
+                <h4 class="widget-title">Industries
+                </h4>
+                <ul>
+                  <ng-container *ngFor="let industries of foramtionDetail?.industries">
+
+                    <li><a ><i class="fa fa-chevron-right"></i> {{industries}}</a></li>
+
+                  </ng-container>
+
+
+                </ul>
+              </aside>
+
+              <aside class="widget widget_sharing">
+                <h4 class="widget-title">Univirsity</h4>
+                <ul>
+                <ng-container *ngFor="let university of foramtionDetail?.university">
+
+                  <li><a ><i class="fa fa-chevron-right"></i> {{university}}</a></li>
+
+                </ng-container>
+                </ul>
+              </aside>
+
+            </div>
+          </div>
+
+          <!--
+          <div class="ed_sidebar_slider ed_bottompadder10">
+            <h3>popular courses</h3>
+            <div id="owl-demo3" class="owl-carousel owl-theme">
+              <div class="item">
+                <div class="ed_item_img">
+                  <img src="../assets/images/default/slider/sec1_s10.jpg" alt="item1" class="img-responsive">
+                </div>
+                <div class="ed_mostrecomeded_course_slider ed_most_recomended_data">
+                  <h4><a href="course_single.html">Project Learning </a><span>£25</span></h4>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ed_item_img">
+                  <img src="../assets/images/default/slider/sec1_s9.jpg" alt="item2" class="img-responsive">
+                </div>
+                <div class="ed_mostrecomeded_course_slider ed_most_recomended_data">
+                  <h4><a href="course_single.html">billing seminar</a><span>free</span></h4>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ed_item_img">
+                  <img src="../assets/images/default/slider/sec1_s8.jpg" alt="item3" class="img-responsive">
+                </div>
+                <div class="ed_mostrecomeded_course_slider ed_most_recomended_data">
+                  <h4><a href="course_single.html">User experience Jam </a><span>£38</span></h4>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ed_item_img">
+                  <img src="../assets/images/default/slider/sec1_s5.jpg" alt="item4" class="img-responsive">
+                </div>
+                <div class="ed_mostrecomeded_course_slider ed_most_recomended_data">
+                  <h4><a href="course_single.html">Girls on Rails </a><span>free</span></h4>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ed_item_img">
+                  <img src="../assets/images/default/slider/sec1_s7.jpg" alt="item1" class="img-responsive">
+                </div>
+                <div class="ed_mostrecomeded_course_slider ed_most_recomended_data">
+                  <h4><a href="course_single.html">Coding Seminar </a><span>free</span></h4>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ed_item_img">
+                  <img src="../assets/images/default/slider/sec1_s4.jpg" alt="item2" class="img-responsive">
+                </div>
+                <div class="ed_mostrecomeded_course_slider ed_most_recomended_data">
+                  <h4><a href="course_single.html">Javascript Campus </a><span>£60</span></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+          <!--Sidebar End-->
+        </div>
+      </div>
+    </div>
+    <!--Single content end-->
+
+
+    <!--Footer Top section start-->
+
+    <!--Footer Top section end-->
+    <!--Footer Bottom section start-->
+
+    <!--Footer Bottom section end-->
+  </div>
+  <!--Page main section end-->
+  </div>
+

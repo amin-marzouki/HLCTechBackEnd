@@ -1,9 +1,9 @@
 import {PaymentRequest$Params} from "../../../models/studentPayment/paymentRequest$Params";
 import {studentRequest$Params} from "../../../models/student/studentRequest$Params";
 import {HttpClient, HttpContext, HttpResponse} from "@angular/common/http";
-import {RequestBuilder} from "../../RequestBuilder";
+import {RequestBuilder} from "../../http/RequestBuilder";
 import {filter, map} from "rxjs/operators";
-import {StrictHttpResponse} from "../../StrictHttpResponse";
+import {StrictHttpResponse} from "../../http/StrictHttpResponse";
 import {addStudentPayment$Params} from "./addStudentPayment";
 
 export interface addStudent$Params{

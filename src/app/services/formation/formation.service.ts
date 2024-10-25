@@ -6,12 +6,12 @@ import {Formation} from "../../models/formation/formation.model";
 import {CourseRequestParams} from "../../models/formation/courseRequest$Params";
 import {PaymentResponse} from "../../models/studentPayment/paymentResponse";
 import {courseDetail$Response} from "../../models/formation/courseDetail$response";
-import {StrictHttpResponse} from "../StrictHttpResponse";
+import {StrictHttpResponse} from "../http/StrictHttpResponse";
 import {map} from "rxjs/operators";
 import {retrieveCourseDetail} from "../fn/formations/retrieveCourseDetail";
 import {ActivatedRoute} from "@angular/router";
 import {BaseService} from "../auth/base.service";
-import {ApiConfiguration} from "../ApiConfiguration";
+import {ApiConfiguration} from "../http/ApiConfiguration";
 import {courseSkills$Response} from "../../models/formation/courseSkills$Response";
 import {retrieveCourseSkills} from "../fn/formations/retrieveCourseSkills";
 import {retrieveActiveFormation} from "../fn/formations/retrieveActiveFormation";
@@ -19,6 +19,8 @@ import {formationActive$Response} from "../../models/formation/formationActive$R
 import {retrieveTotalFormations} from "../fn/formations/retrieveTotalFormtions";
 import {formationStats$Response} from "../../models/formation/formationStats$Response";
 import {retrieveFormationStats} from "../fn/formations/retrieveFormationStats";
+import {activeFormationDetail$Response} from "../../models/formation/activeFormationDetail$Response";
+import {retrieveFormationDetailById} from "../fn/formations/retrieveFormationDetailById$Response";
 
 const baseUrl = 'http://localhost:8080/api/listFormation';
 @Injectable({
@@ -102,9 +104,20 @@ return this.retrieveCourseDetail$Response(params,context).pipe(
     return retrieveFormationStats(this.http,this.rootUrl,context);
   }
 
-  retrieveFormationStats(context?:HttpContext){
+  retrieveFormationStats(context?:HttpContext):Observable<formationStats$Response>{
     return this.retrieveFormationStats$Response(context).pipe(
       map((r:StrictHttpResponse<formationStats$Response>):formationStats$Response=>r.body)
     )
   }
+  retrieveFormationDetailById$Response(params?:CourseRequestParams,context?:HttpContext){
+    return retrieveFormationDetailById(this.http,this.rootUrl,params,context);
+
+  }
+
+  retrieveFormationDetailById(params?:CourseRequestParams,context?:HttpContext):Observable<activeFormationDetail$Response>{
+return this.retrieveFormationDetailById$Response(params,context).pipe(
+  map((r:StrictHttpResponse<activeFormationDetail$Response>):activeFormationDetail$Response=>r.body)
+)
+  }
+
 }

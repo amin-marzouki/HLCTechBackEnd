@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormationService} from "../../services/formation/formation.service";
 import {formationActive$Response} from "../../models/formation/formationActive$Response";
 import {formationStats$Response} from "../../models/formation/formationStats$Response";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-formation-stats',
@@ -10,7 +11,7 @@ import {formationStats$Response} from "../../models/formation/formationStats$Res
 })
 export class FormationStatsComponent implements OnInit{
 
-  constructor(private foramtionServ: FormationService) {
+  constructor(private foramtionServ: FormationService,private router:Router) {
   }
 
   formationsActive  :formationActive$Response[]=[];
@@ -90,6 +91,10 @@ export class FormationStatsComponent implements OnInit{
     );
   }
 
+  formationDetail(id: number ){
+    this.router.navigate(["activeFormationDetail",id]);
 
+
+  }
 }
 

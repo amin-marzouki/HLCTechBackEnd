@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Student} from "../../models/student/student.model";
 import {ActivatedRoute} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {StudentService} from "../../services/student.service";
+import {StudentService} from "../../services/student/student.service";
 import {InscriptionService} from "../../services/inscription/inscription.service";
 import {addStudent$Params} from "../../services/fn/student/addStudent";
 import {studentRequest$Params} from "../../models/student/studentRequest$Params";

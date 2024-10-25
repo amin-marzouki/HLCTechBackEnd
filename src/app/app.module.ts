@@ -31,6 +31,7 @@ import { NewLineToBreakPipe } from './pip/new-line-to-break.pipe';
 import { FooterComponent } from './mainComponent/footer/footer/footer.component';
 import {MatNestedTreeNode, MatTree} from "@angular/material/tree";
 import {FormationStatsComponent} from "./component/formation-stats/formation-stats.component";
+import { FormationActiveDetailComponent } from './component/formation-active-detail/formation-active-detail.component';
 
 
 
@@ -60,7 +61,8 @@ import {FormationStatsComponent} from "./component/formation-stats/formation-sta
     CourseDetailComponent,
     NewLineToBreakPipe,
     FooterComponent,
-    FormationStatsComponent
+    FormationStatsComponent,
+    FormationActiveDetailComponent
 
 
   ],
